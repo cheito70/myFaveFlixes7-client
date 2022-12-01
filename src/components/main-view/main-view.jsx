@@ -42,16 +42,39 @@ setSelectedMovie(movie) {
 }
 
 //Function updates 'user' property in state to particular user if logged in properly
-onLoggedIn(user) {
+onLoggedIn(authData) {
+    console.log(authData);
     this.setState({
-        user
+        user: authData.user.Username
     });
+
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.Username);
+    this.getMovies(authData.token);
 }
-toRegister(registered) {
+
+
+/*toRegister(registered) {
     this.setState({
         registered
     });
+}*/
+
+getMovies(token) {
+    axios.get('https://myfaveflixes.herokuapp.com/movies', {
+        headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(response => {
+        //Assign result to state
+        this.setState({
+            movies: response.data
+        });
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
 }
+
 
     render() {
         const { movies, selectedMovie, user, registered } = this.state;
