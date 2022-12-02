@@ -52,7 +52,7 @@ onLoggedIn(authData) {
 }
 
 
-/*onRegistration(registered) {
+/*onRegistration(register) {
     this.setState({
         registered
     });

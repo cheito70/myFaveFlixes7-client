@@ -27156,7 +27156,7 @@ class MainView extends (0, _reactDefault.default).Component {
         localStorage.setItem("user", authData.user.Username);
         this.getMovies(authData.token);
     }
-    /*onRegistration(registered) {
+    /*onRegistration(register) {
     this.setState({
         registered
     });
