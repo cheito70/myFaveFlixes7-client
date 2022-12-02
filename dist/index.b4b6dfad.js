@@ -27160,21 +27160,20 @@ class MainView extends (0, _reactDefault.default).Component {
     this.setState({
         registered
     });
-}*/ getMovies(token) {
-        (0, _axiosDefault.default).get("https://myfaveflixes.herokuapp.com/movies", {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response)=>{
-            //Assign result to state
-            this.setState({
-                movies: response.data
-            });
-        }).catch(function(error) {
-            console.log(error);
+}*/ /*getMovies(token) {
+    axios.get('https://myfaveflixes.herokuapp.com/movies', {
+        headers: { Authorization: `Bearer ${token}`}
+    })
+    .then((response) => {
+        //Assign result to state
+        this.setState({
+            movies: response.data
         });
-    }
-    render() {
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+}*/ render() {
         const { movies , selectedMovie , user , registered  } = this.state;
         /* If there is no user, the LoginView is rendered. If there is a user logged in, 
         the user details are *passed as a prop to the LoginView*/ if (!registered) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _registrationView.RegistrationView), {}, void 0, false, {
