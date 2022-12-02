@@ -52,11 +52,11 @@ onLoggedIn(authData) {
 }
 
 
-onRegistration(registered) {
+/*onRegistration(registered) {
     this.setState({
         registered
     });
-}
+}*/
 
 getMovies(token) {
     axios.get('https://myfaveflixes.herokuapp.com/movies', {
