@@ -58,7 +58,7 @@ onLoggedIn(authData) {
     });
 }*/
 
-/*getMovies(token) {
+getMovies(token) {
     axios.get('https://myfaveflixes.herokuapp.com/movies', {
         headers: { Authorization: `Bearer ${token}`}
     })
@@ -71,7 +71,7 @@ onLoggedIn(authData) {
     .catch(function (error) {
         console.log(error);
     });
-}*/
+}
 
 
     render() {
