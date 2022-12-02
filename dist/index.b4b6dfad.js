@@ -27156,12 +27156,11 @@ class MainView extends (0, _reactDefault.default).Component {
         localStorage.setItem("user", authData.user.Username);
         this.getMovies(authData.token);
     }
-    onRegistration(registered) {
-        this.setState({
-            registered
-        });
-    }
-    getMovies(token) {
+    /*onRegistration(registered) {
+    this.setState({
+        registered
+    });
+}*/ getMovies(token) {
         (0, _axiosDefault.default).get("https://myfaveflixes.herokuapp.com/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
